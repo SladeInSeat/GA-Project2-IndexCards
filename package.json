@@ -1,0 +1,20 @@
+{
+  "name": "GA-Project2-IndexCards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SladeInSeat/GA-Project2-IndexCards.git"
+  },
+  "keywords": [],
+  "author": "Slade Sawyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SladeInSeat/GA-Project2-IndexCards/issues"
+  },
+  "homepage": "https://github.com/SladeInSeat/GA-Project2-IndexCards#readme"
+}
