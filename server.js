@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
-const routes = require('./index.js')
+const routes = require('./index')
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
