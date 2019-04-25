@@ -5,7 +5,7 @@ const routes = require('./index')
 
 app.use('/', routes)
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log("connected at port: " + PORT);
 })
