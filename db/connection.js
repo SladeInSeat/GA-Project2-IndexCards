@@ -13,8 +13,8 @@ mongoose = require('mongoose');
 // Connect to a local database called "the-donut-shop"
 // When it connects, then console.log "Connected to MongoDB"
 
-const connectionString = "mongodb+srv://sladesawyer:<password>@testcluster-81fgp.mongodb.net/test?retryWrites=true"
-
+const connectionString = "mongodb+srv://sladesawyer:thudnob78@testcluster-81fgp.mongodb.net/test?retryWrites=true"
+// const connectionString = "mongodb://localhost/indexCards"
 mongoose.connect(connectionString, {useNewURLParser: true})
     .then(() => {
         console.log('connected to mongo at ' + connectionString);
