@@ -7,8 +7,14 @@ const userApi = {
             res.show(users);
             }
         )
+    },
+    
+    renderAllUsers: function(req,res){
+        User.find().
+        then(allUsers => {
+            res.render('../views/users', {allUsers})
+        })
     }
-
 };
 
 module.exports = userApi;
