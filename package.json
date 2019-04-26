@@ -19,7 +19,6 @@
   "homepage": "https://github.com/SladeInSeat/GA-Project2-IndexCards#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "handlebars": "^4.1.2",
     "hbs": "^4.0.4",
     "method-override": "^3.0.0",
     "mongodb": "^3.2.3",
