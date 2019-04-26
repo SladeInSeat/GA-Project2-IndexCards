@@ -1,9 +1,13 @@
 let express = require('express')
 let router = express.Router()
-// require user, topic, card apis here
+// require users, topics, cards apis here
+
+let fakeData = {
+    name: 'slade'
+};
 
 router.get('/',function(req,res){
-    res.send('<h1>heroku test</h1>');
+    res.send(fakeData);
 });
 
 module.exports = router 
