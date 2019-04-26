@@ -1,7 +1,7 @@
-let User = require('../models/User.js');
-let Topic = require('../models/Topic.js');
-let Card = require('../models/Card.js');
-let mongoose = require('mongoose')
+let User = require('./models/User.js');
+let Topic = require('./models/Topic.js');
+let Card = require('./models/Card.js');
+let mongoose = require('mongoose');
 
 if (process.env.MONGODB_URI) {
     mongoose.connect(process.env.MONGODB_URI);
@@ -53,7 +53,8 @@ let newTopic2 =
         lastCompletedDate: Date.now()
     }
 
-User.find().then( users => {
+User.find()
+    .then(users => {
     Topic.create({topicName: 'HTML',
                     topicDescription: 'Definitions of common HTML commands and tags',
                     parentUser: users[0]._id,
@@ -61,7 +62,7 @@ User.find().then( users => {
                 },
                 {topicName:'Javascript',
                     topicDescription: 'Vanilla javascript datatypes and functions',
-                    parentUser:users[0]._id,
+                    parentUser: users[0]._id,
                     lastCompletedDate: Date.now()
                 })
     .then(newtopics => {
