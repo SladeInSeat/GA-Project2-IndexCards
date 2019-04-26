@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const routes = require('./routes/index')
+let mongoose = require('mongoose')
 
 const methodOverride = require('method-override')
 
