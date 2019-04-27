@@ -18,7 +18,7 @@ const userApi = {
         });
     },
 
-    showSingleUser: function(req,res){ 
+    renderSingleUser: function(req,res){ 
         User.findById(req.params.id).then(user => {
             res.render("../views/showSingleUser", {user} )
         });

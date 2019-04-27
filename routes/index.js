@@ -17,7 +17,7 @@ router.post("/", usersApi.createUser)
 router.get("/showUsers",usersApi.renderAllUsers)
 
 //  render single user
-router.get("/:id", usersApi.showSingleUser)
+router.get("/:id", usersApi.renderSingleUser)
 
 
 module.exports = router 
