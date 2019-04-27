@@ -40,7 +40,7 @@ User.find()
     Topic.create({topicName: 'HTML',
                     topicDescription: 'Definitions of common HTML commands and tags',
                     parentUser: users[0]._id,
-                    lastCompletedDate: Date.now
+                    lastCompletedDate: Date.now()
                 },
                 {topicName:'Javascript',
                     topicDescription: 'Vanilla javascript datatypes and functions',
