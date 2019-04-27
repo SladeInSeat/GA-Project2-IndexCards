@@ -19,41 +19,42 @@ if (process.env.MONGODB_URI) {
   });
 
 
-// let newUsers = [
-//     {
-//     userName: 'Slade',
-//     lastLogInDate: Date.now()
-//     },
-//     {
-//     userName: 'John',
-//     lastLogInDate: Date.now()
-//     }
-// ];
+let newUsers = [
+    {
+    userName: 'Slade',
+    lastLogInDate: Date.now()
+    },
+    {
+    userName: 'John',
+    lastLogInDate: Date.now()
+    }
+];
 
-// User.create(newUsers)
-//     .then(newusers => {
-//         console.log('created these users:' + newusers)
-//     });
+User.create(newUsers)
+    .then(newusers => {
+        console.log('created these users:' + newusers)
+    });
 
-// User.find()
-//     .then(users => {
-//     Topic.create({topicName: 'HTML',
-//                     topicDescription: 'Definitions of common HTML commands and tags',
-//                     parentUser: users[0]._id,
-//                     lastCompletedDate: Date.now()
-//                 },
-//                 {topicName:'Javascript',
-//                     topicDescription: 'Vanilla javascript datatypes and functions',
-//                     parentUser: users[0]._id,
-//                     lastCompletedDate: Date.now()
-//                 })
-//     .then(newtopics => {
-//         console.log('created these topics: ' + newtopics)
-//     })
-// })
+User.find()
+    .then(users => {
+    Topic.create({topicName: 'HTML',
+                    topicDescription: 'Definitions of common HTML commands and tags',
+                    parentUser: users[0]._id,
+                    lastCompletedDate: Date.now()
+                },
+                {topicName:'Javascript',
+                    topicDescription: 'Vanilla javascript datatypes and functions',
+                    parentUser: users[0]._id,
+                    lastCompletedDate: Date.now()
+                })
+    .then(newtopics => {
+        console.log('created these topics: ' + newtopics)
+    })
+})
 
-Topic.find().then( topics => {
-    Card.create({
+Topic.find()
+    .then( topics => {
+        Card.create({
             cardPrompt: 'img',
             cardAnswer: 'image tag, inserts an image file into page. Syntax: <img src=<path to image file> *alt=<path to backup file> *width=<unit> *heigth=<unit>',
             correctAnswerStreak: 0,

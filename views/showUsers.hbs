@@ -1,11 +1,12 @@
 <main>
     <h1>LIST OF USERS</h1>
-        <ul>start unordered list
+        <ul>
             {{#each allUsers}}
             <li>
                 <h5>Username: {{userName}}</h5>
                 <h5>Last login: {{lastLogInDate}}</h5>
+                <h3>User _id: {{_id}}</h3>
             </li>
             {{/each}}
-        </ul>end unordered list
+        </ul>
 </main>
