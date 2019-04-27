@@ -5,11 +5,11 @@ const userApi = {
     renderAllUsers: function(req,res){
         User.find().then(allUsers => {
             res.render("../views/showUsers", {allUsers} )
-        })
+        });
     },
 
     renderLandingPage: function(req,res){
-        res.render("../views/landing")
+        res.render("../views/landing");
     },
 
     createUser: function(req,res){
@@ -18,10 +18,10 @@ const userApi = {
         });
     },
 
-    showSingleUser: function(req,res){ 
-        User.find({userName: "Slade"}).then(user =>{
-            res.render("..views/showSingleUser",{user})
-        })
+    renderSingleUser: function(req,res){ 
+        User.findById(req.body.id).then(user => {
+            res.render("../views/showSingleUser", {user} )
+        });
     }
 
 };
