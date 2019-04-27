@@ -19,7 +19,7 @@ const userApi = {
     },
 
     showSingleUser: function(req,res){ 
-        User.find({_id : {$oid: "5cc39c4452efe70004d7c782"}}).then(user =>{
+        User.find({userName: "Slade"}).then(user =>{
             res.render("..views/showSingleUser",{user})
         })
     }
