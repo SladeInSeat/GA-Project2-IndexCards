@@ -18,8 +18,8 @@ const userApi = {
         });
     },
 
-    showSingleUser: function(req,res){
-        User.findById(req.params.id).then(user =>{
+    showSingleUser: function(req,res){ 
+        User.find({id : {"$oid": "5cc39c4452efe70004d7c782"}}).then(user =>{
             res.render("..views/showSingleUser",{user})
         })
     }
