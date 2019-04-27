@@ -17,9 +17,9 @@ const userApi = {
             res.redirect("/showUsers")
         });
     },
-    
+
     showSingleUser: function(req,res){
-        User.findById(req.params.id).then( (user) =>{
+        User.findById(req.params.id).then(user =>{
             res.render("..views/showSingleUser",{user})
         })
     }
