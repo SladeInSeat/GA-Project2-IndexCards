@@ -10,6 +10,12 @@ const userApi = {
 
     renderLandingPage: function(req,res){
         res.render("../views/landing")
+    },
+
+    createUser: function(req,res){
+        User.create(req.body).then( () => {
+            res.redirect("/showUsers")
+        });
     }
 
     

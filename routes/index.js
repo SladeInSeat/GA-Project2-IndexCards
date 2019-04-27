@@ -10,7 +10,11 @@ const cardsApi = require('../apis/cards.js')
 //  render landing page
 router.get("/", usersApi.renderLandingPage)
 
+//  create new user from landing page, redirect to showUsers
+router.post("/", usersApi.createUser)
+
 //  render all users
 router.get("/showUsers",usersApi.renderAllUsers)
+
 
 module.exports = router 
