@@ -1,0 +1,19 @@
+<main>
+    <h1>LIST OF TOPICS</h1>
+        <ul>
+            {{#each topics}}
+            <li>
+                <h3>Topic Name: {{topicName}}</h3>
+                <h3>Topic Description: {{topicDescription}}</h3>
+                <h3>Parent User Id: {{parentUser}}</h3>
+                <a href="/{{parentUser}}/{{_id}}">View This Topic</a><br> {{! will be view single topic url}}
+                <h5>Last time this topic completed: {{lastCompletedDate}}</h5>
+                <h5>Topic _id: {{_id}}</h5>
+            </li>
+            {{/each}}
+        </ul>
+    <a href="/{{parentUser}}">Back to User Page</a>
+    <a href="/">Back to Landing Page</a>
+    <br>
+    <a href="/showUsers">Show Existing Users</a>
+</main>

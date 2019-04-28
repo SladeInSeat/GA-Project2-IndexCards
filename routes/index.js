@@ -28,5 +28,8 @@ router.patch("/:id/editUser", usersApi.updateUser)
 //  delete user
 router.delete("/:id/editUser", usersApi.deleteUser)
 
+//  show all topics of one user
+router.get("/:parentId/showTopics", topicsApi.renderAllTopics)
+
 
 module.exports = router 
