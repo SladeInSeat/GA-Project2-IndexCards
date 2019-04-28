@@ -1,15 +1,25 @@
 <main>
     <div class="showUserContainer">
         <div class="userTitle">
+            User Name: {{user.userName}}
+        </div>
+        <div class="userData">
+            Last login: {{user.lastLogInDate}}
+            <br>
+            user _id: {{user._id}}
+        </div>
+        <div class="userActions">
             <form method="POST" action="/{{user._id}}/editUser?_method=PATCH">
                 <input type="text" name="userName" id="username" value={{user.userName}}>
                 <label for="username">Enter new User Name here</label>
                 <input type="submit" value="Submit">
             </form>
+            <br>
             <form method="POST" action="/{{user._id}}/editUser?_method=DELETE">
                 <input type="submit" value="Delete User">
             </form>
         </div>
+        
     </div>
     <a href="/{{user._id}}">Back to User Page</a>
     <a href="/">Back to Landing Page</a>
