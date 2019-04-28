@@ -3,7 +3,7 @@ const Topic = require("../models/Topic.js")
 const topicApi = {
 
     renderAllTopics: function (req,res){
-        Topic.find().then(allTopics => {
+        Topic.find({parentUser: req.params.parentId}).then(allTopics => {
             res.render("../views/showTopics", {allTopics})
         });
     },
