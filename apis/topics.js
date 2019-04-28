@@ -9,8 +9,10 @@ const topicApi = {
     },
 
     renderSingleTopic: function(req,res){
-        Topic.findById(req.params.topicId)
-    },
+        Topic.findById(req.params.topicId).then(topic => {
+            res.render("../views/showSingleTopic", {topic})
+        });
+    }
 };
 
 module.exports = topicApi;

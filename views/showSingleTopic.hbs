@@ -1,0 +1,22 @@
+<main>
+    <div class="showTopicContainer">
+        <div class="topicTitle">
+             Topic Name: {{topic.topicName}}
+        </div>
+        <div class="topicData">
+            Topic Description: {{topic.topicDescription}}<br>
+            Parent User Id: {{topic.parentUser}}
+            <a href="/{{topic.parentUser}}/showTopics">See All Topics for this User</a>
+        </div>
+        <div class="topicActions">
+                edit this topic
+            {{!-- <a href="/{{user._id}}/editUser">Edit User</a> --}}
+            {{!--<<<<View Users Cards>>>> --}}
+        </div>
+    </div>
+    <a href="/">Back to Landing Page</a>
+    <br>
+    <a href="/showUsers">Show Existing Users</a>
+    <br>
+    <a href="/{{topic.parentUser}}">Show this User's Page</a>
+</main>           
