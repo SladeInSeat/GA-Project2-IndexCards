@@ -13,9 +13,14 @@ const topicApi = {
             res.render("../views/showSingleTopic", {topic})
         });
     },
-    
+
+    // getUserId: function(req,res){
+    //     return req.params.userId
+    // },
+
     renderCreateTopic: function(req,res){
-        res.render("../views/createTopic")
+        let userId = req.params.userId
+        res.render("../views/createTopic",{userId})
     }
 };
 

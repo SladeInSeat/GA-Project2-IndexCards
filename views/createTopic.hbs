@@ -2,10 +2,12 @@
    <div class="titleDiv">
        Create Topic
    </div>
+   userid: {{userId}}
    <div class="TopicInputForm">
        <form method="POST" action="/:userId/createTopic">
             <input type="text" name="topicName" id="topicNameInput">
             <label for="userNameInput">Topic Name</label>
+            <br>
             <input type="text" name="topicDescription" id="topicDescInput">
             <label for="topicDescInput">Type in Description</label>
             <input type="submit" value="Submit">
