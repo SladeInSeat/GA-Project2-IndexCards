@@ -32,7 +32,7 @@ const userApi = {
 
     updateUser: function(req,res){
         User.findByIdAndUpdate(req.params.id, {$set: req.body}).then( user => {
-            res.redirect("../views/showSingleUser", {user})
+            res.redirect(`${req.params.id}`, {user})
         });
     }
 
