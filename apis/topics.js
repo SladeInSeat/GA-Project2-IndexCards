@@ -2,8 +2,8 @@ const Topic = require("../models/Topic.js")
 
 const topicApi = {
     renderAllTopics: function (req,res){
-        Topic.find().then( topics => {
-            res.render("../views/showTopics", topics)
+        Topic.find().then( allTopics => {
+            res.render("../views/showTopics", {allTopics})
         })
     },
 
