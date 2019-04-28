@@ -6,6 +6,7 @@
         <div class="userData">
             Last login: {{user.lastLogInDate}}<br>
             user _id: {{user._id}}
+            <a href="/{{user._id}}/showTopics">See {{user.userName}}'s Topics</a>
         </div>
         <div class="userActions">
             <a href="/{{user._id}}/editUser">Edit User</a>
