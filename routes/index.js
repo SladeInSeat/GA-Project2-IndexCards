@@ -19,5 +19,10 @@ router.get("/showUsers",usersApi.renderAllUsers)
 //  render single user
 router.get("/:id", usersApi.renderSingleUser)
 
+//  render user edit page
+router.get("/:id/editUser", usersApi.renderUserEdit)
+
+//  update user name
+router.patch("/:id/editUser", usersApi.updateUser)
 
 module.exports = router 

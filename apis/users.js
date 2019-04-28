@@ -22,6 +22,18 @@ const userApi = {
         User.findById(req.params.id).then(user => {
             res.render("../views/showSingleUser", {user} )
         });
+    },
+
+    renderUserEdit: function(req,res){
+        User.findById(req.params.id).then(user => {
+            res.render("../views/editUser", {user} )
+        });
+    },
+
+    updateUser: function(req,res){
+        User.findByIdAndUpdate(req.params.id, {$set: req.body}).then( user => {
+            res.redirect("../views/showSingleUser", {user})
+        });
     }
 
 };

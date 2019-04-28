@@ -1,0 +1,15 @@
+<main>
+    <div class="showUserContainer">
+        <div class="userTitle">
+            <form method="POST" action="/{{user._id}}/editUser?_method=PATCH">
+                <input type="text" name="userName" id="username" value={{user.userName}}>
+                <label for="username">Enter new User Name here</label>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+    </div>
+    <a href="/{{user._id}}">Back to User Page</a>
+    <a href="/">Back to Landing Page</a>
+    <a href="/showUsers">Show Existing Users</a>
+</main>
