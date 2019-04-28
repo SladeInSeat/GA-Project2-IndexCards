@@ -31,10 +31,12 @@ router.delete("/:id/editUser", usersApi.deleteUser)
 //  show all topics of one user
 router.get("/:parentId/showTopics", topicsApi.renderAllTopics)
 
+//  show create topic page
+router.get("/:userId/createTopic",topicsApi.renderCreateTopic)
+
 //  show single topic
 router.get("/:userId/:topicId", topicsApi.renderSingleTopic)
 
-//  show create topic page
-router.get("/:userId/createTopic",topicsApi.renderCreateTopic)
+
 
 module.exports = router 
