@@ -21,6 +21,15 @@ const topicApi = {
     renderCreateTopic: function(req,res){
         let userId = req.params.userId
         res.render("../views/createTopic",{userId})
+    },
+
+    createTopic: function(req,res){
+        Topic.create({topicName: req.body.topicName,
+                        topicDescription: req.body.topicDescription,
+                        parentUser: req.params.userId,
+                        lastCompletedDate: Date.now()}).then( () => {
+                            res.redirect(`/${req.params.userId}/showTopics`)
+                        })
     }
 };
 
