@@ -9,10 +9,10 @@
                 <a href="/{{parentUser}}/{{_id}}">View This Topic</a><br> {{! will be view single topic url}}
                 <h5>Last time this topic completed: {{lastCompletedDate}}</h5>
                 <h5>Topic _id: {{_id}}</h5>
+                <a href="/{{parentUser}}/createTopic">Create New Topic</a>
             </li>
             {{/each}}
         </ul>
-    <a href="/{{parentUser}}/createTopic">Create New Topic</a>
     <a href="/">Back to Landing Page</a>
     <br>
     <a href="/showUsers">Show Existing Users</a>
