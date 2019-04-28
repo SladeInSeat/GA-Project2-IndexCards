@@ -25,4 +25,8 @@ router.get("/:id/editUser", usersApi.renderUserEdit)
 //  update user name
 router.patch("/:id/editUser", usersApi.updateUser)
 
+//  delete user
+router.delete("/:id/editUser", usersApi.deleteUser)
+
+
 module.exports = router 

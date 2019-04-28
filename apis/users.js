@@ -34,6 +34,12 @@ const userApi = {
         User.findByIdAndUpdate(req.params.id, {$set: req.body}, {new:true}).then( user => {
             res.redirect(`/${user._id}`)
         });
+    },
+
+    deleteUser: function(req,res){
+        User.findByIdAndDelete(req.params.id).then( () => {
+            res.redirect("/showUsers")
+        })
     }
 
 };

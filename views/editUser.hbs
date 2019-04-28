@@ -6,8 +6,10 @@
                 <label for="username">Enter new User Name here</label>
                 <input type="submit" value="Submit">
             </form>
+            <form method="POST" action="/{{user._id}}/editUser?_method=DELETE">
+                <input type="submit" value="Delete User">
+            </form>
         </div>
-
     </div>
     <a href="/{{user._id}}">Back to User Page</a>
     <a href="/">Back to Landing Page</a>
