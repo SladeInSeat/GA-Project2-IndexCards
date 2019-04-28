@@ -34,4 +34,7 @@ router.get("/:parentId/showTopics", topicsApi.renderAllTopics)
 //  show single topic
 router.get("/:userId/:topicId", topicsApi.renderSingleTopic)
 
+//  show create topic page
+router.get("/:userId/createTopic",topicsApi.renderCreateTopic)
+
 module.exports = router 

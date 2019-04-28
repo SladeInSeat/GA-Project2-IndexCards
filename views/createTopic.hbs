@@ -1,0 +1,17 @@
+<main>
+   <div class="titleDiv">
+       Create Topic
+   </div>
+   <div class="TopicInputForm">
+       <form method="POST" action="/:userId/createTopic">
+            <input type="text" name="topicName" id="topicNameInput">
+            <label for="userNameInput">Topic Name</label>
+            <input type="text" name="topicDescription" id="topicDescInput">
+            <label for="topicDescInput">Type in Description</label>
+            <input type="text" name="parentUser" id"parentUserVal" value="{{userId}}">
+            <label for="parentUserVal">Parent Id</label>
+            <input type="submit" value="Submit">
+       </form>
+   </div>
+   <a href="/showUsers">Show Existing Users</a>
+</main>

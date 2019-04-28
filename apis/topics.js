@@ -12,6 +12,15 @@ const topicApi = {
         Topic.findById(req.params.topicId).then(topic => {
             res.render("../views/showSingleTopic", {topic})
         });
+    },
+
+    // getUserId: function(req,res){
+    //     return req.params.userId
+    // },
+
+    renderCreateTopic: function(req,res){
+        let userId = req.params.userId
+        res.render("../views/createTopic",{userId})
     }
 };
 
