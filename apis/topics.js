@@ -4,7 +4,7 @@ const topicApi = {
 
     renderAllTopics: function (req,res){
         Topic.find({parentUser: req.params.parentId}).then(allTopics => {
-            res.render("../views/showTopics", {allTopics})
+            res.render("../views/showTopics", [{allTopics},{parentUser: req.params.parentId}])
         });
     },
 
