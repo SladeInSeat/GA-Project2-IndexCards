@@ -1,4 +1,5 @@
 const Card = require("../models/Card.js")
+const Topic = require("../models/Topic.js")
 
 const cardApi = {
 
@@ -26,8 +27,10 @@ const cardApi = {
             correctAnswerStreak: 0,
             lastStreakDate: Date.now(),
             parentTopic: req.params.topicId
-        }).then(card => {
-            res.render("../views/showSingleCard", { card })
+        }).then( card => {
+            Topic.findById(card.parentTopic).then( topic => {
+                res.redirect(`/${topic.parentUser}/topic/${topic._id}/cards`)
+            })
         });
     },
 
@@ -49,8 +52,10 @@ const cardApi = {
                 cardPrompt: req.body.cardPrompt,
                 cardAnswer: req.body.cardAnswer
             }
-        }, { new: true }).then(() => {
-            res.redirect("/")
+        }, { new: true }).then((newCard) => {
+            Topic.findById(newCard.parentTopic).then( topicObj => {
+                res.redirect(`/${topicObj.parentUser}/topic/${topicObj._id}/cards`)
+            })
         });
     }
 
