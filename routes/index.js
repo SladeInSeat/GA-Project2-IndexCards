@@ -47,10 +47,13 @@ router.get("/:userId/topic/:topicId", topicsApi.renderSingleTopic)
 router.get("/:userId/edit/:topicId", topicsApi.renderTopicEdit)
 
 // update topic
-router.patch("/:userId/edit/:topicId", topicsApi.updateTopic)
+router.patch("/:userId/editTopic/:topicId", topicsApi.updateTopic)
 
 //  show all cards for a topic
 router.get("/:userId/topic/:topicId/cards", cardsApi.renderAllCards)
+
+//  show one card
+router.get("/:topicId/cards/:cardId", cardsApi.renderSingleCard)
 
 
 module.exports = router 

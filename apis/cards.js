@@ -6,6 +6,12 @@ const cardApi = {
         Card.find({parentTopic : req.params.topicId }).then( allCards => {
             res.render("../views/showCards", {allCards})
         });
+    },
+
+    renderSingleCard: function(req,res){
+        Card.findById(req.params.cardId).then( card => {
+            res.render("../views/showSingleCard", {card})
+        })
     }
 
 }

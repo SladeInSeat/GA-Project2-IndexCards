@@ -1,0 +1,22 @@
+<main>
+    <div class="showTopicContainer">
+        <div class="topicData">
+            Prompt: {{card.cardPrompt}}<br>
+            Answer: {{card.cardAnswer}}<br>
+            Parent Topic Id: {{card.parentTopic}}<br>
+            Card Id: {{card._id}}<br>
+        </div>
+        <div class="topicActions">
+                <a href="/{{card.parentTopic}}/editCard/{{card._id}}">Edit Card</a><br>
+                <form action="/{{card.parentTopic}}/editCard/{{card._id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_id" value={{card._id}}>
+                    <input type="submit" value="Delete this Card">
+                </form>
+        </div>
+    </div>
+    <a href="/">Back to Landing Page</a>
+    <br>
+    <a href="/showUsers">Show Existing Users</a>
+    <br>
+    <a href="/{{card.parentTopic}}">??</a>
+</main>      
