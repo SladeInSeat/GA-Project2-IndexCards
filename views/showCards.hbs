@@ -1,0 +1,19 @@
+<main>
+    <h1>CARDS</h1>
+        {{#if allCards}}
+        <ul>
+            {{#each allCards}}
+            <li>
+                <h3>Prompt: {{cardPrompt}}</h3>
+                <h3>Answer: {{cardAnswer}}</h3>
+                <h5>correctAnswerStreak: {{correctAnswerStreak}}</h5>
+                <h5>lastStreakDate: {{lastStreakDate}}</h5>
+                <h5>parentTopic: {{parentTopic}}</h5>
+            </li>
+            {{/each}}
+        </ul>
+        {{else}}
+            <h3>There are no cards in this topic</h3>> 
+        {{/if}}
+    <a href="/">Back to Landing Page</a>
+</main>
