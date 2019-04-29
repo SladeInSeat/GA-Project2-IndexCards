@@ -10,7 +10,7 @@
             <a href="/{{topic.parentUser}}/showTopics">See All Topics for this User</a>
         </div>
         <div class="topicActions">
-                <form action="/{{topic.parentUser}}/{{topic._id}}?_method=PATCH" method="POST">
+                <form action="/{{topic.parentUser}}/edit/{{topic._id}}?_method=PATCH" method="POST">
                     <input type="text" name="topicName" id="tName" value={{topic.topicName}}>
                     <label for="tName">Topic Name</label>
                     <input type="text" name="topicDescription" id='tDesc' value={{topic.topicDescription}}>
