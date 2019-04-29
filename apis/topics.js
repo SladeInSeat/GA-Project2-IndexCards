@@ -33,7 +33,7 @@ const topicApi = {
     },
 
     deleteTopic: function(req,res){
-        Topic.findByIdAndDelete(req.body.topicId).then( () => {
+        Topic.findByIdAndDelete(req.body._id).then( () => {
             res.redirect(`/${req.params.userId}`)
         });
     }
