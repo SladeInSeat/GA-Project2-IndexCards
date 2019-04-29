@@ -27,6 +27,12 @@ const cardApi = {
             parentTopic: req.params.topicId}).then( card => {
                 res.render("../views/showSingleCard", {card})
             });
+    },
+
+    deleteCard: function(req,res){
+        Card.findByIdAndDelete(req.body._id).then( () => {
+            res.redirect(`/`)
+        })
     }
 
 }
