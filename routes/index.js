@@ -43,6 +43,11 @@ router.delete("/:userId/:topicId", topicsApi.deleteTopic)
 //  show single topic
 router.get("/:userId/:topicId", topicsApi.renderSingleTopic)
 
+// show edit topic
+router.get("/:userId/edit/:topicId", topicsApi.renderTopicEdit)
+
+// update topic
+router.patch("/:userId/edit/:topicId", topicsApi.updateTopic)
 
 
 module.exports = router 
