@@ -9,7 +9,11 @@
             <a href="/{{topic.parentUser}}/showTopics">See All Topics for this User</a>
         </div>
         <div class="topicActions">
-                edit this topic
+                << edit this topic >>
+                <form method="POST" action="/{{topic.parentUser}}/{{topic._id}}?_method=DELETE">
+                <input type="hidden" name="_id" value={{topic._id}}>
+                <input type="submit" value="Delete this Topic">
+                </form>
             {{!-- <a href="/{{user._id}}/editUser">Edit User</a> --}}
             {{!--<<<<View Users Cards>>>> --}}
         </div>

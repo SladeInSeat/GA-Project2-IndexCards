@@ -29,7 +29,13 @@ const topicApi = {
                         parentUser: req.params.userId,
                         lastCompletedDate: Date.now()}).then( () => {
                             res.redirect(`/${req.params.userId}/showTopics`)
-                        })
+                        });
+    },
+
+    deleteTopic: function(req,res){
+        Topic.findByIdAndDelete(req.body.topicId).then( () => {
+            res.redirect(`/${req.params.userId}`)
+        });
     }
 };
 

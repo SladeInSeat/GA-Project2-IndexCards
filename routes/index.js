@@ -37,6 +37,9 @@ router.get("/:userId/createTopic",topicsApi.renderCreateTopic)
 //  create topic
 router.post("/:userId/createTopic",topicsApi.createTopic)
 
+//  delete topic
+router.delete("/:userId/:topicId", topicsApi.deleteTopic)
+
 //  show single topic
 router.get("/:userId/:topicId", topicsApi.renderSingleTopic)
 
