@@ -14,10 +14,6 @@ const topicApi = {
         });
     },
 
-    // getUserId: function(req,res){
-    //     return req.params.userId
-    // },
-
     renderCreateTopic: function (req, res) {
         let userId = req.params.userId
         res.render("../views/createTopic", { userId })
@@ -42,7 +38,7 @@ const topicApi = {
 
     renderTopicEdit: function(req, res){
         Topic.findById(req.params.topicId).then(topic => {
-            res.render("../views/editTopic", topic)
+            res.render("../views/editTopic", {topic})
         });
     },
 
