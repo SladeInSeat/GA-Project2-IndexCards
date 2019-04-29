@@ -64,4 +64,11 @@ router.post("/:topicId/createCard", cardsApi.createCard)
 //  delete card
 router.delete("/:topicId/editCard/:cardId", cardsApi.deleteCard)
 
+// show update card
+router.get("/:topicId/editCard/:cardId", cardsApi.renderEditCard)
+
+//  update card
+router.patch("/:topicId/editCard/:cardId", cardsApi.updateCard)
+
+
 module.exports = router 

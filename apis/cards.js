@@ -33,6 +33,12 @@ const cardApi = {
         Card.findByIdAndDelete(req.body._id).then( () => {
             res.redirect(`/`)
         })
+    },
+
+    renderEditCard: function(req,res){
+        Card.findById(req.params.cardId).then( card => {
+            res.render("../views/editCard", {card})
+        })
     }
 
 }
