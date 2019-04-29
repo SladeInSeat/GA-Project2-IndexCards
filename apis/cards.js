@@ -12,9 +12,21 @@ const cardApi = {
         Card.findById(req.params.cardId).then( card => {
             res.render("../views/showSingleCard", {card})
         })
+    },
+
+    renderCreateCard: function(req,res){
+        let topicId = req.params.topicId
+        res.render("../views/createCard", {topicId})
     }
 
 }
 
 
 module.exports = cardApi;
+
+// Card.create({cardPrompt: req.body.cardPrompt,
+//     cardAnswer: req.body.cardAnswer,
+//     correctAnswerStreak: 0,
+//     lastStreakDate: Date.now(),
+//     parentTopic: req.params.topicId}).then( newCard => 
+//     })

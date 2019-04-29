@@ -1,0 +1,15 @@
+<main>
+   <div class="titleDiv">
+       Create Card
+   </div>
+   <div class="TopicInputForm">
+       <form method="POST" action="/{{topicId}}/createCard">
+            <input type="text" name="cardPrompt" id="cardPromptInput">
+            <label for="cardPromptInput">Card Prompt</label><br>
+            <input type="text" name="cardAnswer" id="cardAnswerInput">
+            <label for="cardAnswerInput">Answer</label><br>
+            <input type="submit" value="Submit">
+       </form>
+   </div>
+   <a href="/showUsers">Show Existing Users</a>
+</main>
