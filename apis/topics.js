@@ -36,19 +36,19 @@ const topicApi = {
         });
     },
 
-    renderTopicEdit: function(req, res){
+    renderTopicEdit: function (req, res) {
         Topic.findById(req.params.topicId).then(topic => {
-            res.render("../views/editTopic", {topic})
+            res.render("../views/editTopic", { topic })
         });
     },
 
     updateTopic: function (req, res) {
-        Topic.findByIdAndUpdate({
+        Topic.findByIdAndUpdate(req.params.topicId, {
             $set: {
                 topicName: req.body.topicName,
                 topicDescription: req.body.topicDescription
             }
-        }).then(() => {
+        }, { new: true }).then(() => {
             res.redirect(`/${req.params.userId}/showTopics`)
         });
     }
