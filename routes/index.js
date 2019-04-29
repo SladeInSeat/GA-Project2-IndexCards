@@ -55,5 +55,8 @@ router.get("/:userId/topic/:topicId/cards", cardsApi.renderAllCards)
 //  show one card
 router.get("/:topicId/cards/:cardId", cardsApi.renderSingleCard)
 
+//  show create card
+router.get("/:topicId/createCard", cardsApi.renderCreateCard)
+
 
 module.exports = router 

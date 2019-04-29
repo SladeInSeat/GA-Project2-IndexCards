@@ -10,7 +10,7 @@
         </div>
         <div class="topicActions">
                 <a href="/{{topic.parentUser}}/topic/{{topic._id}}/cards">Show cards</a><br>
-                <a href="/{{topic._id}}/creatCard">Create Card</a><br>
+                <a href="/{{topic._id}}/createCard">Create Card</a><br>
                 <a href="/{{topic.parentUser}}/editTopic/{{topic._id}}">Edit Topic</a><br>
                 <form action="/{{topic.parentUser}}/topic/{{topic._id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_id" value={{topic._id}}>
