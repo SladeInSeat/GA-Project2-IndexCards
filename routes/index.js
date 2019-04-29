@@ -58,5 +58,8 @@ router.get("/:topicId/cards/:cardId", cardsApi.renderSingleCard)
 //  show create card
 router.get("/:topicId/createCard", cardsApi.renderCreateCard)
 
+//  create card
+router.post("/:topicId/createCard", cardsApi.createCard)
+
 
 module.exports = router 
