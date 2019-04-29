@@ -11,7 +11,7 @@
         </div>
         <div class="topicActions">
                 <a href="/{{topic.parentUser}}/edit/{{topic._id}}">Edit Topic</a>
-                <form action="/{{topic.parentUser}}/{{topic._id}}?_method=DELETE" method="POST">
+                <form action="/{{topic.parentUser}}/topic/{{topic._id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_id" value={{topic._id}}>
                     <input type="submit" value="Delete this Topic">
                 </form>

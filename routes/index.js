@@ -38,16 +38,18 @@ router.get("/:userId/createTopic",topicsApi.renderCreateTopic)
 router.post("/:userId/createTopic",topicsApi.createTopic)
 
 //  delete topic
-router.delete("/:userId/:topicId", topicsApi.deleteTopic)
+router.delete("/:userId/topic/:topicId", topicsApi.deleteTopic)
 
 //  show single topic
-router.get("/:userId/:topicId", topicsApi.renderSingleTopic)
+router.get("/:userId/topic/:topicId", topicsApi.renderSingleTopic)
 
 // show edit topic
 router.get("/:userId/edit/:topicId", topicsApi.renderTopicEdit)
 
 // update topic
 router.patch("/:userId/edit/:topicId", topicsApi.updateTopic)
+
+//  show all cards for a topic
 
 
 module.exports = router 
