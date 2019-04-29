@@ -50,7 +50,7 @@ router.get("/:userId/edit/:topicId", topicsApi.renderTopicEdit)
 router.patch("/:userId/edit/:topicId", topicsApi.updateTopic)
 
 //  show all cards for a topic
-router.get(":userId/topic/:topicId/cards", cardsApi.renderAllCards)
+router.get("/:userId/topic/:topicId/cards", cardsApi.renderAllCards)
 
 
 module.exports = router 
