@@ -3,20 +3,19 @@ const Topic = require("../models/Topic.js")
 
 const cardApi = {
 
-    renderAllCards: function (req, res) {
-        Card.find({ parentTopic: req.params.topicId }).then(allCards => {
-            res.render("../views/showCards", {allCards})
-        });
-    },
-
     // renderAllCards: function (req, res) {
-    //     Card.find({ parentTopic: req.params.topicId }).then( allCards => {
-    //         Topic.findById(req.params.topicId).then( topic => {
-    //             res.render("../views/showCards", [{allCards},{topic}])
-    //         })
-            
+    //     Card.find({ parentTopic: req.params.topicId }).then(allCards => {
+    //         res.render("../views/showCards", {allCards})
     //     });
     // },
+
+    renderAllCards: function (req, res) {
+        Card.find({ parentTopic: req.params.topicId }).then( allCards => {
+            Topic.findById(req.params.topicId).then( topic => {
+                res.render("../views/showCards", [{allCards},{topic}])
+            })
+        });
+    },
 
     renderSingleCard: function (req, res) {
         Card.findById(req.params.cardId).then(card => {
