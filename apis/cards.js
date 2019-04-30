@@ -5,9 +5,18 @@ const cardApi = {
 
     renderAllCards: function (req, res) {
         Card.find({ parentTopic: req.params.topicId }).then(allCards => {
-            res.render("../views/showCards", { allCards })
+            res.render("../views/showCards", {allCards})
         });
     },
+
+    // renderAllCards: function (req, res) {
+    //     Card.find({ parentTopic: req.params.topicId }).then( allCards => {
+    //         Topic.findById(req.params.topicId).then( topic => {
+    //             res.render("../views/showCards", [{allCards},{topic}])
+    //         })
+            
+    //     });
+    // },
 
     renderSingleCard: function (req, res) {
         Card.findById(req.params.cardId).then(card => {
@@ -53,12 +62,11 @@ const cardApi = {
                 cardAnswer: req.body.cardAnswer
             }
         }, { new: true }).then((newCard) => {
-            Topic.findById(newCard.parentTopic).then( topicObj => {
+            Topic.findById(newCard.parentTopic).then(topicObj => {
                 res.redirect(`/${topicObj.parentUser}/topic/${topicObj._id}/cards`)
             })
         });
     }
-
 }
 
 
