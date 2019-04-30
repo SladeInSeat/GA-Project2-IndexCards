@@ -44,7 +44,7 @@ router.delete("/:userId/topic/:topicId", topicsApi.deleteTopic)
 router.get("/:userId/topic/:topicId", topicsApi.renderSingleTopic)
 
 // show edit topic
-router.get("/:userId/edit/:topicId", topicsApi.renderTopicEdit)
+router.get("/:userId/editTopic/:topicId", topicsApi.renderTopicEdit)
 
 // update topic
 router.patch("/:userId/editTopic/:topicId", topicsApi.updateTopic)
