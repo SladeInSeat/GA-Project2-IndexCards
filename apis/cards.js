@@ -9,14 +9,6 @@ const cardApi = {
         });
     },
 
-    // renderAllCards: function (req, res) {
-    //     Card.find({ parentTopic: req.params.topicId }).then( allCards => {
-    //         Topic.findById(req.params.topicId).then( topic => {
-    //             res.render("../views/showCards", [{allCards},{topic}])
-    //         })
-    //     });
-    // },
-
     renderSingleCard: function (req, res) {
         Card.findById(req.params.cardId).then(card => {
             res.render("../views/showSingleCard", { card })
@@ -37,7 +29,7 @@ const cardApi = {
             parentTopic: req.params.topicId
         }).then( card => {
             Topic.findById(card.parentTopic).then( topic => {
-                res.redirect(`/${topic.parentUser}/topic/${topic._id}/cards`)
+                res.render("../views/showSingleTopic", {topic})
             })
         });
     },
@@ -49,12 +41,6 @@ const cardApi = {
             })
         })
     },
-    // /:userId/topic/:topicId
-    // deleteCard: function (req, res) {
-    //     Card.findByIdAndDelete(req.body._id).then(() => {
-    //         res.redirect(`/`)
-    //     })
-    // },
 
     renderEditCard: function (req, res) {
         Card.findById(req.params.cardId).then(card => {
