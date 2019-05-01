@@ -1,5 +1,26 @@
 <main>
-    <div class="showTopicContainer">
+    <div class="container-fluid m-3">
+        <h3>Edit Card</h3>
+        <div class="card p-1 m-4" style="width: 50rem;">
+           <div class="card-header">Prompt: {{card.cardPrompt}}</div>
+           <br>
+           <div class="card-body">Answer: {{card.cardAnswer}}</div>
+           <div class="card-footer">
+                <form action="/{{card.parentTopic}}/editCard/{{card._id}}?_method=PATCH" method="POST">
+                    <label for="cPromptInput">Prompt</label>
+                    <input type="text" name="cardPrompt" id="cPromptInput" value={{card.cardPrompt}}>
+                    <br>
+                    <label for="cAnsweInput">Answer</label>
+                    <input type="text" name="cardAnswer" id="cAnswerInput" value={{card.cardAnswer}}>
+                    <br>
+                    <input type="submit" class="btn btn-primary" value="Submit changes">
+                </form>
+            </div>
+        </div>
+    </div>
+</main>      
+
+    {{!-- <div class="showTopicContainer">
         <div class="topicData">
             Prompt: {{card.cardPrompt}}<br>
             Answer: {{card.cardAnswer}}<br>
@@ -15,8 +36,4 @@
                     <input type="submit" value="Submit changes">
                 </form>
         </div>
-    </div>
-    <a href="/">Back to Landing Page</a>
-    <br>
-    <a href="/showUsers">Show Existing Users</a>
-</main>      
+    </div> --}}

@@ -1,20 +1,16 @@
 <main>
-    <div class="showUserContainer">
-        <div class="userTitle">
-            User Name: {{user.userName}}<br>
-        </div>
-        <div class="userData">
-            Last login: {{user.lastLogInDate}}<br>
-            user _id: {{user._id}}
-            <a href="/{{user._id}}/showTopics">See {{user.userName}}'s Topics</a>
-        </div>
-        <div class="userActions">
-            <a href="/{{user._id}}/editUser">Edit User</a>
-             <a href="/{{user._id}}/createTopic">Create a new Topic for {{user.userName}}</a>
-            {{!-- <<<<View Users Cards>>>> --}}
+    <div class="container-fluid m-3">
+        <h3>User Page</h3>
+       <div class="card p-1 m-4" style="width: 50rem;">
+            <div class="card-header">User Name: {{user.userName}}</div>
+            <div class="card-body">
+                <a href="/{{user._id}}/showTopics" class="btn btn-primary">See Topics</a>
+                &emsp;&emsp;
+                <a href="/{{user._id}}/createTopic" class="btn btn-primary">Create a new Topic</a>
+            </div>
+            <div class="card-footer">
+                <a href="/{{user._id}}/editUser" class="btn btn-primary">Edit User</a>
+            </div>
         </div>
     </div>
-    <a href="/">Back to Landing Page</a>
-    <br>
-    <a href="/showUsers">Show Existing Users</a>
 </main>

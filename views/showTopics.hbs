@@ -1,6 +1,24 @@
 <main>
-    <h1>LIST OF TOPICS</h1>
-    {{#if allTopics}}
+    <div class="container-fluid m-3">
+        <h3>LIST OF TOPICS</h3>
+        {{#if allTopics}}
+            {{#each allTopics}}
+            <div class="card p-1 m-4" style="width: 50rem;">
+                <div class="card-header">Topic Name: {{topicName}}</div>
+                <div class="card-body">
+                    <div class="card-text">Topic Description: {{topicDescription}}</div>
+                </div>
+                <div class="card-footer"><a href="/{{parentUser}}/topic/{{_id}}" 
+                    class="btn btn-primary">View This Topic</a>&emsp;&emsp;
+                    <a href="/{{parentUser}}/createTopic" 
+                    class="btn btn-primary">Create A New Topic</a></div>
+            </div>
+            {{/each}}
+        {{else}}
+            <h3>There are no lists for this user. Create one on the users page</h3>
+        {{/if}}
+    </div>
+    {{!-- {{#if allTopics}}
         <ul>
             {{#each allTopics}}
             <li>
@@ -16,8 +34,5 @@
         </ul>
      {{else}}
      <h3>There are no lists for this user. Create one on the users page</h3>
-     {{/if}}   
-    <a href="/">Back to Landing Page</a>
-    <br>
-    <a href="/showUsers">Show Existing Users</a>
+     {{/if}}    --}}
 </main>

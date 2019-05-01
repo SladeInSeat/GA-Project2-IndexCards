@@ -1,14 +1,22 @@
 <main>
-    <h1>LIST OF USERS</h1>
-        <ul>
+    <div class="container p-3 m-3">
+        <h3>LIST OF USERS</h3>
             {{#each allUsers}}
-            <li>
-                <h3>Username: {{userName}}</h3>
-                <a href="/{{_id}}">View {{userName}}'s User Page</a>
-                <h5>Last login: {{lastLogInDate}}</h5>
-                <h5>User _id: {{_id}}</h5>
-            </li>
+                <div class="card p-1 m-4">
+                    <div class="card-header">User Name: {{userName}}</div>
+                    <div class="card-body"><a href="/{{_id}}" class="btn btn-primary">View {{userName}}'s User Page</a></div>
+                    <div class="card-footer">User Id: {{_id}}</div>
+                </div>
             {{/each}}
-        </ul>
-    <a href="/">Back to Landing Page</a>
+            {{!-- <ul>
+                {{#each allUsers}}
+                <li>
+                    <h3>Username: {{userName}}</h3>
+                    <a href="/{{_id}}">View {{userName}}'s User Page</a>
+                    <h5>Last login: {{lastLogInDate}}</h5>
+                    <h5>User _id: {{_id}}</h5>
+                </li>
+                {{/each}}
+            </ul> --}}
+    </div>
 </main>

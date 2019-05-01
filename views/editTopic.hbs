@@ -1,4 +1,29 @@
 <main>
+    <div class="container-fluid m-3">
+        <h3>Edit Topic</h3>
+        <div class="card p-1 m-4" style="width: 50rem;">
+            <div class="card-header">Topic Name: {{topic.topicName}}
+                <br>
+                Topic Description: {{topic.topicDescription}}
+            </div>
+            <div class="card-body">
+                <a href="/{{topic.parentUser}}/showTopics" class="btn btn-primary">See All Topics for this User</a>
+            </div>
+            <div class="card-footer">
+                <form action="/{{topic.parentUser}}/editTopic/{{topic._id}}?_method=PATCH" method="POST">
+                    <label for="tName">Topic Name</label>
+                    <input type="text" name="topicName" id="tName" value={{topic.topicName}}>
+                    <br>
+                    <label for="tDesc">Topic Description</label>
+                    <input type="text" name="topicDescription" id='tDesc' value={{topic.topicDescription}}>  
+                    <br>
+                    <input type="submit" class="btn btn-primary" value="Edit this Topic">
+                </form>
+            </div>
+        </div>
+    </div>
+</main>   
+{{!-- 
     <div class="showTopicContainer">
         <div class="topicTitle">
              Topic Name: {{topic.topicName}}
@@ -7,7 +32,7 @@
             Topic Description: {{topic.topicDescription}}<br>
             Parent User Id: {{topic.parentUser}}
             Topic Id: {{topic._id}}
-            <a href="/{{topic.parentUser}}/showTopics">See All Topics for this User</a>
+
         </div>
         <div class="topicActions">
                 <form action="/{{topic.parentUser}}/editTopic/{{topic._id}}?_method=PATCH" method="POST">
@@ -15,17 +40,8 @@
                     <label for="tName">Topic Name</label>
                     <input type="text" name="topicDescription" id='tDesc' value={{topic.topicDescription}}>
                     <label for="tDesc">Topic Description</label>
-                    {{!-- <input type="text" name="parentUser" value={{topic.parentUser}}>
-                    <input type="date" name="lastCompletedDate" value={{topic.lastCompletedDate}}> --}}
                     <input type="submit" value="Edit this Topic">
                 </form>
-            {{!-- <a href="/{{user._id}}/editUser">Edit User</a> --}}
-            {{!--<<<<View Users Cards>>>> --}}
         </div>
     </div>
-    <a href="/">Back to Landing Page</a>
-    <br>
-    <a href="/showUsers">Show Existing Users</a>
-    <br>
-    <a href="/{{topic.parentUser}}">Show this User's Page</a>
-</main>   
+    <a href="/{{topic.parentUser}}">Show this User's Page</a> --}}

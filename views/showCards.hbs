@@ -1,6 +1,25 @@
 <main>
-    <h1>CARDS</h1>
+    <div class="container-fluid m-3">
+        <h1>CARDS</h1>
         {{#if allCards}}
+            {{#each allCards}}
+            <div class="card p-1 m-4" style="width: 50rem;">
+                <div class="card-header">Prompt: {{cardPrompt}}</div>
+                <div class="card-body">
+                    <div class="card-text">Answer: {{cardAnswer}}</div>
+                </div>
+                <div class="card-footer"><a href="/{{parentTopic}}/cards/{{_id}}" class="btn btn-primary">
+                View this card</a></div>
+            </div>
+            {{/each}}
+        {{else}}
+            <h3>There are no cards in this topic</h3>
+            <h3> link to something here, like create a card for this topic</h3>
+        {{/if}}
+    </div>
+</main>
+
+     {{!-- {{#if allCards}}
         <ul>
             {{#each allCards}}
             <li>
@@ -16,7 +35,4 @@
         </ul>
         {{else}}
             <h3>There are no cards in this topic</h3>> 
-        {{/if}}
-    <a href="/showUsers">Show Existing Users</a>
-    <a href="/">Back to Landing Page</a>
-</main>
+        {{/if}} --}}

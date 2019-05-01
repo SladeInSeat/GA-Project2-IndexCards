@@ -1,5 +1,27 @@
 <main>
-    <div class="showTopicContainer">
+    <div class="container-fluid m-3">
+        <h3>Topic Page</h3>
+       <div class="card p-1 m-4" style="width: 50rem;">
+           <div class="card-header">Topic Name: {{topic.topicName}}</div>
+           <div class="card-body">Topic Description: {{topic.topicDescription}}</div>
+           <div class="card-footer">
+                <a href="/{{topic.parentUser}}/topic/{{topic._id}}/cards" class="btn btn-primary">Show cards</a>
+                &emsp;&emsp;
+                <a href="/{{topic._id}}/createCard" class="btn btn-primary">Create Card</a>
+                &emsp;&emsp;
+                <a href="/{{topic.parentUser}}/editTopic/{{topic._id}}" class="btn btn-primary">Edit Topic</a>
+                &emsp;&emsp;
+                <a href="/{{topic.parentUser}}/showTopics" class="btn btn-primary">See All Topics for this User</a>
+                <form action="/{{topic.parentUser}}/topic/{{topic._id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_id" value={{topic._id}}>
+                    <input type="submit" class="btn btn-primary" value="Delete this Topic">
+                </form>
+           </div>
+        </div>
+    </div>
+</main>       
+
+ {{!-- <div class="showTopicContainer">
         <div class="topicTitle">
              Topic Name: {{topic.topicName}}
         </div>
@@ -19,10 +41,4 @@
                 <br>
                 <a href="/{{topic.parentUser}}/showTopics">See All Topics for this User</a>
         </div>
-    </div>
-    <a href="/">Back to Landing Page</a>
-    <br>
-    <a href="/showUsers">Show Existing Users</a>
-    <br>
-    <a href="/{{topic.parentUser}}">Show this User's Page</a>
-</main>           
+    </div> --}}
