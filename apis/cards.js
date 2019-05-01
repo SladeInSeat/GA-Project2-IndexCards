@@ -44,9 +44,17 @@ const cardApi = {
 
     deleteCard: function (req, res) {
         Card.findByIdAndDelete(req.body._id).then(() => {
-            res.redirect(`/`)
+            Topic.findById(req.body.parentTopic).then( topic =>{
+                res.render("../views/showSingleTopic", {topic})
+            })
         })
     },
+    // /:userId/topic/:topicId
+    // deleteCard: function (req, res) {
+    //     Card.findByIdAndDelete(req.body._id).then(() => {
+    //         res.redirect(`/`)
+    //     })
+    // },
 
     renderEditCard: function (req, res) {
         Card.findById(req.params.cardId).then(card => {

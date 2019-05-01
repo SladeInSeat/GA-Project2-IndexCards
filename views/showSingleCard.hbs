@@ -9,6 +9,7 @@
                 &emsp;&emsp;
                 <form action="/{{card.parentTopic}}/editCard/{{card._id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_id" value={{card._id}}>
+                    <input type="hidden" name="parentTopic" value={{card.parentTopic}}>
                     <input type="submit" class="btn btn-primary" value="Delete this Card">
                 </form>
            </div>
