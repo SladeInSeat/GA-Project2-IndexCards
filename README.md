@@ -4,7 +4,7 @@
 Take a look! [Index Card Manager](https://ancient-dusk-58501.herokuapp.com/)
 
 ## Technologies used:
-  MEHN stack ( MongoDB, Express, Handlebars, Node), Bootstrap, HTML, Javascript, CSS, git, git-hub, Postman, Compass
+  MEHN stack ( MongoDB, Express, Handlebars, Node), Heroku, Bootstrap, git, git-hub, Postman, Compass
 
 ## Requirements:
   Up to date browser
@@ -16,7 +16,7 @@ Take a look! [Index Card Manager](https://ancient-dusk-58501.herokuapp.com/)
     * Organizing concepts into measureable steps, and create issues for [Project Board](https://github.com/SladeInSeat/GA-Project2-IndexCards/projects/1)
       * Group issues by connectivity/simliarity of data/structure
 1. Production stage:
-    * Achieve minimum functionality for related pages and dependent processes, one at a time.  For example, working on the landing page route, view, and controller together allowed Postman testing to verify functionality. View Topics functionality is dependent on having a parent user, so all user functionality achieved first.
+    * Achieve minimum functionality for related pages and dependent processes, one at a time.  For example, working on the landing page route, view, and controller together allowed Postman testing to verify functionality. View Topics functionality is dependent on having a parent user, so all user functionality achieved first. Use postman, compass, and heroku to test.
     * Reassess intital goals during productionn process and tweak process/goals as needed.
  
 
