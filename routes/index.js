@@ -17,19 +17,19 @@ router.post("/", usersApi.createUser)
 router.get("/showUsers",usersApi.renderAllUsers)
 
 //  render single user
-router.get("/:id", usersApi.renderSingleUser)
+router.get("/:userId", usersApi.renderSingleUser)
 
 //  render user edit page
-router.get("/:id/editUser", usersApi.renderUserEdit)
+router.get("/:userId/editUser", usersApi.renderUserEdit)
 
 //  update user name
-router.patch("/:id/editUser", usersApi.updateUser)
+router.patch("/:userId/editUser", usersApi.updateUser)
 
 //  delete user
-router.delete("/:id/editUser", usersApi.deleteUser)
+router.delete("/:userId/editUser", usersApi.deleteUser)
 
 //  show all topics of one user
-router.get("/:parentId/showTopics", topicsApi.renderAllTopics)
+router.get("/:parentUserId/showTopics", topicsApi.renderAllTopics)
 
 //  show create topic page
 router.get("/:userId/createTopic",topicsApi.renderCreateTopic)

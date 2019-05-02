@@ -19,25 +19,25 @@ const userApi = {
     },
 
     renderSingleUser: function(req,res){ 
-        User.findById(req.params.id).then(user => {
+        User.findById(req.params.userId).then(user => {
             res.render("../views/showSingleUser", {user} )
         });
     },
 
     renderUserEdit: function(req,res){
-        User.findById(req.params.id).then(user => {
+        User.findById(req.params.userId).then(user => {
             res.render("../views/editUser", {user} )
         });
     },
 
     updateUser: function(req,res){
-        User.findByIdAndUpdate(req.params.id, {$set: req.body}, {new:true}).then( user => {
+        User.findByIdAndUpdate(req.params.userId, {$set: req.body}, {new:true}).then( user => {
             res.redirect(`/${user._id}`)
         });
     },
 
     deleteUser: function(req,res){
-        User.findByIdAndDelete(req.params.id).then( () => {
+        User.findByIdAndDelete(req.params.userId).then( () => {
             res.redirect("/showUsers")
         })
     }
