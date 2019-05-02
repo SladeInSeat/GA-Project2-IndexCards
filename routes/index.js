@@ -70,6 +70,10 @@ router.get("/:topicId/editCard/:cardId", cardsApi.renderEditCard)
 //  update card
 router.patch("/:topicId/editCard/:cardId", cardsApi.updateCard)
 
-//  test
+//  to topic from cards
+router.get("/:topicId/middle/", topicsApi.renderSingleTopic)
+
+//  to cards from card
+router.get("/:topicId/AllCards", cardsApi.renderAllCards)
 
 module.exports = router 

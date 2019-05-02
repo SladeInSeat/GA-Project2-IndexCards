@@ -59,6 +59,12 @@ const cardApi = {
                 res.redirect(`/${topicObj.parentUser}/topic/${topicObj._id}/cards`)
             })
         });
+    },
+
+    getTopic: function(req,res) {
+        Topic.find({_id: req.params.topicId}).then( topic => {
+            res.render("../views/showSingleTopic", {topic})
+        });
     }
 }
 

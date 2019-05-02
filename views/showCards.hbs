@@ -8,14 +8,15 @@
                 <div class="card-body">
                     <div class="card-text">Answer: {{cardAnswer}}</div>
                 </div>
-                <div class="card-footer"><a href="/{{parentTopic}}/cards/{{_id}}" class="btn btn-primary">
-                View this card</a></div>
+                <div class="card-footer">
+                    <a href="/{{parentTopic}}/cards/{{_id}}" class="btn btn-primary">View this card</a>
+                    &emsp;&emsp;
+                    <a href="/{{parentTopic}}/middle" class="btn btn-primary">To Parent Topic</a>
+                </div>
             </div>
             {{/each}}
         {{else}}
             <h3>There are no cards in this topic</h3>
-            <h3> link to something here, like create a card for this topic</h3>
         {{/if}}
-        
     </div>
 </main>
