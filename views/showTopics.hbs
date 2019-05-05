@@ -1,21 +1,29 @@
 <main>
     <div class="container-fluid m-3">
-        <h3>LIST OF TOPICS</h3>
+        <div class="h2">LIST OF TOPICS</div>
+        <a href="/{{parentUserId}}/createTopic" 
+            class="btn btn-primary">Create A New Topic
+        </a>
         {{#if allTopics}}
+        <div class="card-deck">
             {{#each allTopics}}
-            <div class="card p-1 m-4" style="width: 50rem;">
-                <div class="card-header">Topic Name: {{topicName}}</div>
-                <div class="card-body">
-                    <div class="card-text">Topic Description: {{topicDescription}}</div>
+            <div class="col-sm-4 d-flex p-1">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Topic Name: {{topicName}}</h3>
+                    </div>
+                    <div class="card-body">
+                        Topic Description:{{topicDescription}}
+                    </div>
+                    <div class="card-footer"><a href="/{{parentUser}}/topic/{{_id}}" 
+                        class="btn btn-primary">View This Topic</a>
+                    </div>
                 </div>
-                <div class="card-footer"><a href="/{{parentUser}}/topic/{{_id}}" 
-                    class="btn btn-primary">View This Topic</a>&emsp;&emsp;
-                    <a href="/{{parentUser}}/createTopic" 
-                    class="btn btn-primary">Create A New Topic</a></div>
             </div>
             {{/each}}
+        </div>
         {{else}}
-            <h3>There are no lists for this user. Create one on the users page</h3>
+            <h3>There are no lists for this user.</h3>        
         {{/if}}
     </div>
 </main>

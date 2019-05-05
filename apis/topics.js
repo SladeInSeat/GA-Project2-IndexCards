@@ -4,19 +4,20 @@ const topicApi = {
 
     renderAllTopics: function (req, res) {
         Topic.find({ parentUser: req.params.parentUserId }).then(allTopics => {
-            res.render("../views/showTopics", { allTopics })
+            let = parentUserId = req.params.parentUserId
+            res.render("showTopics", { allTopics, parentUserId })
         });
     },
 
     renderSingleTopic: function (req, res) {
         Topic.findById(req.params.topicId).then(topic => {
-            res.render("../views/showSingleTopic", { topic })
+            res.render("showSingleTopic", { topic })
         });
     },
 
     renderCreateTopic: function (req, res) {
         let userId = req.params.userId
-        res.render("../views/createTopic", { userId })
+        res.render("createTopic", { userId })
     },
 
     createTopic: function (req, res) {
@@ -38,7 +39,7 @@ const topicApi = {
 
     renderTopicEdit: function (req, res) {
         Topic.findById(req.params.topicId).then(topic => {
-            res.render("../views/editTopic", { topic })
+            res.render("editTopic", { topic })
         });
     },
 

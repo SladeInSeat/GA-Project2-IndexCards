@@ -4,29 +4,31 @@ const userApi = {
 
     renderAllUsers: function(req,res){
         User.find().then(allUsers => {
-            res.render("../views/showUsers", {allUsers} )
+            res.render("showUsers", {allUsers} )
         });
     },
 
     renderLandingPage: function(req,res){
-        res.render("../views/landing");
+        res.render("landing");
     },
 
     createUser: function(req,res){
-        User.create(req.body).then( () => {
+        User.create({userName: req.body.userName,
+                    lastLogInDate: Date.now()
+                    }).then( () => {
             res.redirect("/showUsers")
         });
     },
 
     renderSingleUser: function(req,res){ 
         User.findById(req.params.userId).then(user => {
-            res.render("../views/showSingleUser", {user} )
+            res.render("showSingleUser", {user} )
         });
     },
 
     renderUserEdit: function(req,res){
         User.findById(req.params.userId).then(user => {
-            res.render("../views/editUser", {user} )
+            res.render("editUser", {user} )
         });
     },
 

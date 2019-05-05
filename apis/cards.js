@@ -4,20 +4,25 @@ const Topic = require("../models/Topic.js")
 const cardApi = {
 
     renderAllCards: function (req, res) {
-        Card.find({ parentTopic: req.params.topicId }).then( allCards => {
-            res.render("../views/showCards", {allCards})
+        Topic.findById(req.params.topicId).then( topic => {
+            Card.find({ parentTopic: req.params.topicId }).then( allCards => {
+                res.render("showCards", { topic, allCards})
+            });
         });
     },
 
     renderSingleCard: function (req, res) {
         Card.findById(req.params.cardId).then(card => {
-            res.render("../views/showSingleCard", { card })
+            Topic.findById(card.parentTopic).then(topic => {
+                res.render("showSingleCard", { card, topic })
+            })
+            
         })
     },
 
     renderCreateCard: function (req, res) {
         let topicId = req.params.topicId
-        res.render("../views/createCard", { topicId })
+        res.render("createCard", { topicId })
     },
 
     createCard: function (req, res) {
@@ -29,22 +34,24 @@ const cardApi = {
             parentTopic: req.params.topicId
         }).then( card => {
             Topic.findById(card.parentTopic).then( topic => {
-                res.render("../views/showSingleTopic", {topic})
-            })
+                Card.find({ parentTopic: card.parentTopic}).then( allCards => {
+                    res.render("showCards", { topic, allCards})
+                });
+            });
         });
     },
 
     deleteCard: function (req, res) {
         Card.findByIdAndDelete(req.body._id).then(() => {
             Topic.findById(req.body.parentTopic).then( topic =>{
-                res.render("../views/showSingleTopic", {topic})
+                res.render("showSingleTopic", {topic})
             })
         })
     },
 
-    renderEditCard: function (req, res) {
+    renderCardEdit: function (req, res) {
         Card.findById(req.params.cardId).then(card => {
-            res.render("../views/editCard", { card })
+            res.render("editCard", { card })
         })
     },
 
@@ -63,7 +70,7 @@ const cardApi = {
 
     getTopic: function(req,res) {
         Topic.find({_id: req.params.topicId}).then( topic => {
-            res.render("../views/showSingleTopic", {topic})
+            res.render("showSingleTopic", {topic})
         });
     }
 }

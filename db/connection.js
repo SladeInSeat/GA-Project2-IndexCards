@@ -1,4 +1,4 @@
-// requirements: import mongoose
+
 let mongoose = require('mongoose');
 
 if (process.env.MONGODB_URI) {

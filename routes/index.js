@@ -4,8 +4,6 @@ const usersApi = require('../apis/users.js')
 const topicsApi = require('../apis/topics.js')
 const cardsApi = require('../apis/cards.js')
 
-//  renders all users on home page
-// router.get('/', usersApi.renderAllUsers);
 
 //  render landing page
 router.get("/", usersApi.renderLandingPage)
@@ -65,15 +63,10 @@ router.post("/:topicId/createCard", cardsApi.createCard)
 router.delete("/:topicId/editCard/:cardId", cardsApi.deleteCard)
 
 // show update card
-router.get("/:topicId/editCard/:cardId", cardsApi.renderEditCard)
+router.get("/:topicId/editCard/:cardId", cardsApi.renderCardEdit)
 
 //  update card
 router.patch("/:topicId/editCard/:cardId", cardsApi.updateCard)
 
-//  to topic from cards
-router.get("/:topicId/middle/", topicsApi.renderSingleTopic)
-
-//  to cards from card
-router.get("/:topicId/AllCards", cardsApi.renderAllCards)
 
 module.exports = router 

@@ -7,7 +7,7 @@
            <div class="card-footer">
                 <a href="/{{card.parentTopic}}/editCard/{{card._id}}" class="btn btn-primary">Edit Card</a>
                 &emsp;&emsp;
-                <a href="/{{card.parentTopic}}/AllCards" class="btn btn-primary">Back to Cards List</a>
+                <a href="/{{topic.parentUser}}/topic/{{card.parentTopic}}/cards" class="btn btn-primary">Back to Cards List</a>
                 <br><br>
                 <form action="/{{card.parentTopic}}/editCard/{{card._id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_id" value={{card._id}}>
